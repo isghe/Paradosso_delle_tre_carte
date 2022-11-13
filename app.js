@@ -5,9 +5,10 @@ const testRand = () => {
 	for (let i = 0; i < 10; ++i) {
 		const value01 = randInclusive(0, 1);
 		const value13 = randInclusive(1, 3);
-		unitTestResult.push ({i, value01, value13});
+		unitTestResult.push({i, value01, value13});
 	}
-	console.log ({unitTestResult});
+
+	console.log({unitTestResult});
 };
 
 const isGoldCard = card => card[0] === 1 && card[1] === 1;
