@@ -10,7 +10,7 @@ const testRand = () => {
 
 const isGoldCard = card => card[0] === 1 && card[1] === 1;
 
-const testNCards = (configuration) => {
+const testNCards = configuration => {
 	const cards = [];
 	for (let i = 0; i < configuration.gold; ++i) {
 		cards.push([1, 1]);
