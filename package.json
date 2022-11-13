@@ -1,0 +1,14 @@
+{
+  "name": "three-cards",
+  "version": "1.0.0",
+  "description": "testing https://it.wikipedia.org/wiki/Paradosso_delle_tre_carte",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Isidoro Ghezzi",
+  "license": "ISC",
+  "dependencies": {
+    "xo": "^0.52.4"
+  }
+}
