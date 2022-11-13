@@ -11,12 +11,13 @@ const testRand = () => {
 const isGoldCard = card => card[0] === 1 && card[1] === 1;
 
 const testNCards = configuration => {
+	console.log({configuration});
 	const cards = [];
-	for (let i = 0; i < configuration.gold; ++i) {
+	for (let i = 0; i < configuration.cards.gold; ++i) {
 		cards.push([1, 1]);
 	}
 
-	for (let i = 0; i < configuration.mix; ++i) {
+	for (let i = 0; i < configuration.cards.mix; ++i) {
 		if (randInclusive(0, 1)) {
 			cards.push([0, 1]);
 		} else {
@@ -24,16 +25,16 @@ const testNCards = configuration => {
 		}
 	}
 
-	for (let i = 0; i < configuration.silver; ++i) {
+	for (let i = 0; i < configuration.cards.silver; ++i) {
 		cards.push([0, 0]);
 	}
 
-	console.log(cards);
+	console.log({cards});
 	const result = {victories: 0, defeats: 0};
 
-	for (let i = 0; i < 1_000_000; ++i) {
+	for (let i = 0; i < configuration.loop; ++i) {
 		const rand1 = randInclusive(0, cards.length - 1);
-		if (rand1 < configuration.gold + configuration.mix) {
+		if (rand1 < configuration.cards.gold + configuration.cards.mix) {
 			const rand2 = randInclusive(0, 1);
 			if (cards[rand1][rand2] === 1) {
 				if (isGoldCard(cards[rand1])) {
@@ -50,7 +51,7 @@ const testNCards = configuration => {
 
 const main = () => {
 	testRand();
-	testNCards({gold: 1, mix: 1, silver: 0});
+	testNCards({cards: {gold: 1, mix: 1, silver: 0}, loop: 1_000_000});
 };
 
 main();
