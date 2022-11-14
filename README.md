@@ -1,3 +1,6 @@
+
+the result is independent of the number of silver cards
+
 ```
 time node app.js 
 {
