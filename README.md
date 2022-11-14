@@ -1,5 +1,5 @@
 
-the result is independent of the number of silver cards
+the result 2/3 is independent of the number of silver cards
 
 ```
 time node app.js 
